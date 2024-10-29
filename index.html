@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón de Amor con Ranitas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Indie Flower', cursive;
+            text-align: center;
+            color: #2e7d32;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #00695c;
+            margin-bottom: 100px;
+        }
+        .heart-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        .heart {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff4081;
+            transform: rotate(45deg);
+            margin: auto;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #ff4081;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -100px;
+            left: 0;
+        }
+        .heart::after {
+            left: -100px;
+            top: 0;
+        }
+        .frog {
+            position: absolute;
+            width: 60px;
+            animation: hop 1.5s infinite;
+        }
+        /* Posiciones de las ranitas */
+        .frog1 { top: -80px; left: -80px; }
+        .frog2 { top: -80px; right: -80px; }
+        .frog3 { bottom: -80px; left: -80px; }
+        .frog4 { bottom: -80px; right: -80px; }
+        
+        @keyframes hop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .message {
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Para Mhel</h1>
+
+    <div class="heart-container">
+        <div class="heart"></div>
+        <img src="rana.png" class="frog frog1" alt="Ranita 1">
+        <img src="rana.png" class="frog frog2" alt="Ranita 2">
+        <img src="rana.png" class="frog frog3" alt="Ranita 3">
+        <img src="rana.png" class="frog frog4" alt="Ranita 4">
+    </div>
+
+    <p class="message">¡Con mucho cariño!</p>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.heart-container').hover(
+                function() {
+                    $(this).find('.heart').css('transform', 'rotate(45deg) scale(1.1)');
+                },
+                function() {
+                    $(this).find('.heart').css('transform', 'rotate(45deg) scale(1)');
+                }
+            );
+        });
+    </script>
+
+</body>
+</html>
+
